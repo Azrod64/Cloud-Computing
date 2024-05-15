@@ -38,3 +38,4 @@ Thumbs.db
 
 # Fichiers qui sont recompilé 
 /tf-projet/.terraform
+*.txt
