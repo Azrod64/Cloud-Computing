@@ -1,36 +1,41 @@
-# Ignorer tous les fichiers sauf ceux avec les extensions spécifiées
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-# Autoriser les fichiers avec les extensions spécifiées
-*.tf
-*.tpl
-*.md
-*.js
-*.html
-*.css
-*.yml
-*.txt
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-# Ignorer tous les fichiers des dossiers tf-project et website qui n'ont pas d'extensions spécifiées
-tf-project/*
-tf-project/.terraform/*
-!tf-project/*.tf
-!tf-project/*.tpl
-!tf-project/*.md
-!tf-project/*.js
-!tf-project/*.html
-!tf-project/*.css
-!tf-project/*.yml
-!tf-project/*.txt
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
 
-website/*
-!website/*.tf
-!website/*.tpl
-!website/*.md
-!website/*.js
-!website/*.html
-!website/*.css
-!website/*.yml
-!website/*.txt
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Laisser passer tous les fichiers du dossier atelier-docker
-!atelier-docker/
+# Fichiers qui sont recompilé 
+# /tf-project/.terraform
+/website
