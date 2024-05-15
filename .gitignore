@@ -1,0 +1,36 @@
+# Ignorer tous les fichiers sauf ceux avec les extensions spécifiées
+
+# Autoriser les fichiers avec les extensions spécifiées
+*.tf
+*.tpl
+*.md
+*.js
+*.html
+*.css
+*.yml
+*.txt
+
+# Ignorer tous les fichiers des dossiers tf-project et website qui n'ont pas d'extensions spécifiées
+tf-project/*
+tf-project/.terraform/*
+!tf-project/*.tf
+!tf-project/*.tpl
+!tf-project/*.md
+!tf-project/*.js
+!tf-project/*.html
+!tf-project/*.css
+!tf-project/*.yml
+!tf-project/*.txt
+
+website/*
+!website/*.tf
+!website/*.tpl
+!website/*.md
+!website/*.js
+!website/*.html
+!website/*.css
+!website/*.yml
+!website/*.txt
+
+# Laisser passer tous les fichiers du dossier atelier-docker
+!atelier-docker/
