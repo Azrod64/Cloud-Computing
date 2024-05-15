@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  hello-ui:
+    build:
+      context: ./hello-ui
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - hello-microservice
+    environment:
+      - MICROSERVICE_URL=http://hello-microservice:5000
+
+  hello-microservice:
+    build:
+      context: ./hello-microservice
+      dockerfile: Dockerfile
+  
