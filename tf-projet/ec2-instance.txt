@@ -1,0 +1,36 @@
+/*
+Nom du fichier : 02-ec2-instance.tf  
+Résumé : Ce fichier contient la configuration nécessaire pour créer une instance EC2 sur AWS, une clé privée TLS, et une paire de clés AWS. 
+L'instance EC2 utilise des indications précises telles que le type d'instance, l'AMI, la clé d'accès, une adresse IP publique, un sous-réseau, 
+et un groupe de sécurité. La clé privée utilise l'algorithme RSA et contient 4096 bits. La paire de clés AWS est nommée "deployer-key" et 
+utilise la clé publique de la clé privée TLS précédemment créée.
+*/
+
+//Ressource pour créer une instance EC2 sur AWS
+resource "aws_instance" "this" {
+  ami           = "ami-04b70fa74e45c3917"
+  instance_type = "t2.micro"
+  key_name      = aws_key_pair.deployer.key_name
+  associate_public_ip_address = true
+  subnet_id = aws_subnet.public-subnet-a.id
+  vpc_security_group_ids = [aws_security_group.main_security_group.id]
+}
+
+//Ressource pour créer une clé privée TLS
+resource "tls_private_key" "rsa-4096" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+//Ressource pour créer une paire de clés AWS qui utilise la clé publique de la clé privée TLS précédemment créée
+resource "aws_key_pair" "deployer" {
+  key_name   = "deployer-key"
+  public_key = tls_private_key.rsa-4096.public_key_openssh
+}
+
+
+
+
+
+
+
