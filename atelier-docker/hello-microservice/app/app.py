@@ -9,7 +9,7 @@ from time import sleep  # Importez cette ligne pour utiliser la fonction sleep()
 
 from flask import Flask, request, render_template, send_from_directory, Response
 from logging.config import dictConfig
-
+ 
 version = '0.0.2' 
 
 dictConfig({

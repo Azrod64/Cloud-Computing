@@ -1,0 +1,5 @@
+# Utilisez l'image officielle de Nginx comme image de base
+FROM nginx:alpine
+
+# Place le contenu du répertoire frontend dans le répertoire par défaut de Nginx
+COPY ./frontend /usr/share/nginx/html

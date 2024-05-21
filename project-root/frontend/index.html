@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Twitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-bar">
+        <h1>My Twitter</h1>
+        <button id="login-btn">Connexion</button>
+    </header>
+
+    <main class="main">
+        <textarea id="tweet-content" placeholder="What's happening?"></textarea>
+        <button id="tweet-button">Tweet</button>
+    </main>
+
+    <section class="comments-section">
+        <div id="comments-container"></div>
+    </section>
+
+    <div id="popup-background"></div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <button id="login-button">Login</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
