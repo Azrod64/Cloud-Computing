@@ -28,12 +28,12 @@ body {
 }
 
 /* Main styles */
-.main {
+/* .main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+} */
 
 /* Sign-up form styles */
 .signup-form {
@@ -43,6 +43,7 @@ body {
     border-radius: 5px;
     background-color: #f9f9f9;
     text-align: center; /* Centrer le contenu du formulaire */
+    margin-top: 0;
 }
 
 .signup-form h2 {
@@ -78,4 +79,12 @@ body {
     margin-top: 10px;
     color: #007bff;
     text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    /* align-items: center; Centre verticalement */
+    height: 100%; /* S'assure que le conteneur prend toute la hauteur de la page */
+    margin-top: 120px;
 }

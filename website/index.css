@@ -104,12 +104,12 @@ body {
     background-color: #e6f7ff;
 }
 
-.phone-screen .main {
+/* .phone-screen .main {
     height: 16vh;
     background-color: var(--secondary-color);
     padding: 15px;
     border-bottom: 1px solid var(--tertiary-color);
-}
+} */
 
 .phone-screen .main textarea {
     width: 100%;
