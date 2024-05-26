@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - My Twitter</title>
+    <link rel="stylesheet" href="signup-style.css">
+</head>
+<body>
+    <header class="top-bar">
+        <h1>My Twitter</h1>
+    </header>
+
+    <main class="main">
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+            <form>
+                <input id = "new-username" type="text" name="new-username" placeholder="Username" required>
+                <input id = "new-password" type="password" name="new-password" placeholder="Password" required>
+                <button id="signup-button" type="submit">Sign Up</button>
+                <a id = login href="../Cloud-Computing/index.html">I already have an account</a>
+            </form>
+        </div>
+    </main>
+
+    <section class="comments-section">
+        <div id="comments-container"></div>
+    </section>
+
+    <script src="./signup.js" defer></script>
+</body>
+</html>

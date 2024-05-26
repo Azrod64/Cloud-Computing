@@ -1,0 +1,26 @@
+{
+    "threads": [
+        {
+            "author": "Jack",
+            "date": 1632031037503,
+            "content": "Hey there"
+        },
+        {
+            "author": "Arthur",
+            "date": 1632031037503,
+            "content": "Hey to you too"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "user": "admin",
+            "password": "admin"
+        },
+        {
+            "id": 2,
+            "user": "romu",
+            "password": "romu"
+        }
+    ]
+}
