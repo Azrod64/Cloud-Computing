@@ -1,4 +1,5 @@
 services:
+
   frontend:
     build:
       context: .
@@ -8,7 +9,8 @@ services:
     ports:
       - "8080:80" # Expose port 8080 for frontend
     depends_on:
-      - backend    # Add this line to ensure frontend waits for backend
+      - backend
+      - backend2 
 
   backend:
     build: .
@@ -18,6 +20,17 @@ services:
       - "80:80" # Expose port 80 for backend
     depends_on:
       - db
+
+  backend2:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend2
+    volumes:
+      - ./backend2:/var/www/html
+    ports:
+      - "8081:80"
+    depends_on:
+      - db2
 
   db:
     image: mysql:latest
@@ -29,12 +42,23 @@ services:
     volumes:
       - "./db:/docker-entrypoint-initdb.d"
 
+  db2:
+    # Nouvelle base de données ajoutée
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=php_docker2
+      - MYSQL_USER=php_docker2
+      - MYSQL_PASSWORD=password2
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    volumes:
+      - "./db2:/docker-entrypoint-initdb.d"
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
       - "8001:80"
     environment:
-      - PMA_HOST=db
+      - PMA_HOST=db2
       - PMA_PORT=3306
 
 networks:

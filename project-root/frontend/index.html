@@ -6,10 +6,11 @@
     <title>My Twitter</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="top-bar">
         <h1>My Twitter</h1>
-        <button id="login-btn">Connexion</button>
+        <button id="login-btn" onclick="location.href='signin.html';">Connexion</button>
     </header>
 
     <main class="main">
@@ -21,17 +22,7 @@
         <div id="comments-container"></div>
     </section>
 
-    <div id="popup-background"></div>
-
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <h2>Login</h2>
-            <input type="text" placeholder="Username" id="username">
-            <input type="password" placeholder="Password" id="password">
-            <button id="login-button">Login</button>
-        </div>
-    </div>
-
     <script src="script.js" defer></script>
 </body>
+
 </html>

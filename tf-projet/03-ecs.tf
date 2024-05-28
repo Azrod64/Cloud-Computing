@@ -13,3 +13,5 @@ module "cluster_instances" {
   lab_instance_profile  = var.lab_instance_profile
   depends_on = [aws_nat_gateway.private_nat_gateway]
 }
+
+
