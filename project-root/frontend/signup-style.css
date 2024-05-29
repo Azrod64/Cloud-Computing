@@ -1,5 +1,14 @@
 /* signup-style.css */
 
+:root {
+    --primary-color: #1DA1F2;
+    --secondary-color: #fff;
+    --tertiary-color: #E1E8ED;
+    --background-color: #E6ECF0;
+    --text-color: #14171A;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
 /* Resetting default margin and padding */
 * {
     margin: 0;
@@ -9,20 +18,65 @@
 
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
-}
-
-/* Header styles */
-.top-bar {
-    background-color: #1DA1F2;
-    color: white;
-    padding: 10px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    overflow: hidden;
 }
 
-.top-bar a {
+.phone-frame {
+    height: 80vh;
+    width: 35vw;
+    background: #000;
+    border-radius: 30px;
+    padding: 17px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transform: rotateX(10deg) rotateY(-10deg);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    position: relative;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    font-family: var(--font-family);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: translateZ(20px);
+}
+
+.phone-frame::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 40%;
+    width: 60px;
+    height: 5px;
+    background: #333;
+    border-radius: 10px;
+    transform: translateZ(25px);
+}
+
+/* Header styles */
+.phone-screen .top-bar {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    padding: 10px 20px;
+}
+
+.phone-screen .top-bar a {
     color: white;
     text-decoration: none;
 }
@@ -35,9 +89,17 @@ body {
     height: 100vh;
 } */
 
+.phone-screen .main {
+    height: 73vh;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-bottom: 1px solid var(--tertiary-color);
+    align-content: center;
+}
+
 /* Sign-up form styles */
 .signup-form {
-    width: 300px;
+    width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -87,4 +149,25 @@ body {
     /* align-items: center; Centre verticalement */
     height: 100%; /* S'assure que le conteneur prend toute la hauteur de la page */
     margin-top: 120px;
+}
+
+.phone-screen .home-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    background-color: #000;
+    color: var(--secondary-color);
+}
+
+.phone-screen .home-bar .btn {
+    display: inline-block;
+    border: grey 1px solid;
+    margin-top: 2px;
+    font-size: 24px;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transform: translateX(-9%);
 }
